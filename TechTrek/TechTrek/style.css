@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    padding: 20px 100px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo img {
+    max-width: 40px; /* Adjust as needed */
+}
+
+.navigation {
+    position: absolute;
+    top: 20px;
+    right: 100px; /* Adjust the distance from the right side as needed */
+    display: flex;
+    align-items: center;
+}
+
+.navigation a{
+    position: relative;
+    font-size: 1em;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+    align-items: right;
+}
+
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: blue;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover:after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.navigation .btnLogin-popup{
+    width: 120px;
+    height: 60px;
+    background: transparent;
+    border: 3x solid black;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+    margin-left: 40px;
+    align-items: right;
+    transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover{
+    background-color: blue;
+    color: black;
+}
+
+.background-clip{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media(min-aspect-ratio:16/9){
+    .background-clip{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media(max-aspect-ratio:16/9){
+    .background-clip{
+        width: auto;
+        height: 100%;
+    }
+}
+
+.wrapper {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: calc(100vh - 40px);
+    max-width: calc(100vw - 40px);
+    width: 400px;
+    height: 450px;
+    max-width: 90%; /* Adjust if needed */
+    padding: 20px;
+    background: transparent;
+    border: 3px solid blue;
+    box-sizing: border-box;
+    flex-direction: column;
+    border-radius: 18px;
+    backdrop-filter: blur(9px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+    transition: transform .5s ease, height .2s ease;
+}
+
+.wrapper.active-popup{
+    transform: scale(1);
+}
+
+.wrapper.active{
+    height: 520px;
+
+}
+
+.wrapper .form-box{
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    max-height: calc(100% - 80px);
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.wrapper.active .form-box.login{
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: yellow;
+    font-size: 2em;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+.form-box h2{
+    font-size: 3em;
+    color: yellow;
+    text-align: center;
+}
+
+.imput-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 3px solid black;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: calc(100% - 30px); /* Adjust input width to accommodate labels and icons */
+    height: 100%;
+    padding: 10px 30px 10px 5px; /* Ensure text doesn't overlap with labels and icons */
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000; /* Adding a dark line at the bottom */
+    outline: none; /* Removing default input focus outline */
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box input:focus {
+    border-bottom: 2px solid #000; /* Darken the line on input focus */
+}
+
+.remember-forget{
+    font-size: .9em;
+    color: black;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forget label input{
+    accent-color: blue;
+}
+
+.remember-forget a{
+    color: red;
+    text-decoration: none;
+}
+
+.remember-forget a:hover{
+    text-decoration: underline;
+}
+
+.btn{
+    width: 100%;
+    height: 45px;
+    background: yellow;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    font-weight: 600;
+}
+
+.login-register{
+    font-size: .9em;
+    color: black;
+    text-align: center;
+    font-size: 600;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: #162916;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a::hover{
+    text-decoration: underline;
+}

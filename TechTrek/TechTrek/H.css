@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+#features {
+    padding: 5vw 8vw 0 8vw;
+    text-align: center;
+    color: #333; /* Change the color of the text */
+}
+
+#features h1 {
+    color: #333; /* Change the color of the heading */
+    font-weight: bold; /* Make the text bold */
+}
+
+#features .fea-base {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+    justify-content: center; /* Center the grid */
+}
+
+#features .fea-box {
+    background: transparent;
+    text-align: start;
+}
+
+#features .fea-box i {
+    font-size: 2.5rem;
+    color: black;
+}
+
+#features .fea-box h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: black;
+    padding: 13px 0 7px 0;
+    opacity: 1;
+    text-decoration: underline; /* Add underline */
+}
+
+#features .fea-box p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+    padding: 13px 0 7px 0;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+#features .fea-box p :hover{
+    opacity: 0.5;
+}
+
+.background-clip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 999; /* Set z-index higher to keep it on top */
+}

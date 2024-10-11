@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Background color */
+}
+
+form {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px; /* Add spacing between heading and form */
+}
+
+input[type="file"] {
+    margin-bottom: 10px; /* Add spacing between file input and submit button */
+}
+
+input[type="submit"] {
+    background-color: #4caf50; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Button padding */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Button border radius */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Darker background color on hover */
+}

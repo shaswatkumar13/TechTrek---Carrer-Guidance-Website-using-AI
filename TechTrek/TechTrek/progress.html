@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="background_styles.css">
+    <link rel="stylesheet" href="P.css">
+    <script src="PB.js" defer></script>
+    <title>Please Wait</title>
+  </head>
+  <body>
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar" style="--width: 0%;" data-label="Loading..."></div>
+    </div>
+
+    <script>
+      // Function to simulate loading progress
+      function simulateLoading() {
+        var progressBar = document.getElementById('progress-bar');
+        var width = 0;
+        var interval = setInterval(function() {
+          if (width >= 100) {
+            clearInterval(interval);
+            // Redirect to the other page when loading is complete
+            window.location.href = 'R Scanner.html';
+          } else {
+            width += 10;
+            progressBar.style.setProperty('--width', width + '%');
+          }
+        }, 300); // Adjust the interval for smoother progress
+      }
+
+      // Call the function when the page loads
+      window.onload = simulateLoading;
+    </script>
+  </body>
+</html>
